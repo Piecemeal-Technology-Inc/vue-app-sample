@@ -1,0 +1,88 @@
+{
+  "name": "vue-sample-app",
+  "version": "1.0.0",
+  "config": {
+    "buildno": "01"
+  },
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:mock": "vue-cli-service build --mode mock",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test": "jest --coverage",
+    "test-without-coverage": "jest --silent=false --verbose false",
+    "clean": "cross-var \"rimraf dist mock coverage $npm_package_name-*.zip\" && npm prune",
+    "initialize": "npm install",
+    "compile": "npm run build",
+    "package": "cross-var \"rimraf $npm_package_name-*.zip\" && cross-var \"bestzip $npm_package_name-$npm_package_version_$npm_package_config_buildno.zip dist/*\""
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "@chenfengyuan/vue-qrcode": "^1.0.1",
+    "axios": "^0.19.0",
+    "core-js": "^2.6.5",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "vee-validate": "^3.0.11",
+    "vue": "^2.6.10",
+    "vue-i18n": "^8.12.0",
+    "vue-qriously": "^1.1.1",
+    "vuetify": "^1.5.16",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@vue/cli-plugin-babel": "^3.12.0",
+    "@vue/cli-plugin-eslint": "^3.12.0",
+    "@vue/cli-plugin-unit-jest": "^3.12.0",
+    "@vue/cli-service": "^3.12.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.9.0",
+    "bestzip": "^2.1.4",
+    "cross-var-no-babel": "^1.2.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "flush-promises": "^1.0.2",
+    "jest": "^24.9.0",
+    "jsdom": "^15.1.1",
+    "jsdom-global": "^3.0.2",
+    "mocky": "^0.1.11",
+    "regenerator-runtime": "^0.13.3",
+    "remove-files-webpack-plugin": "^1.1.3",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-cli-plugin-vuetify": "^0.5.0",
+    "vue-jest": "^3.0.5",
+    "vue-router": "^3.1.3",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.0.5"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
