@@ -19,6 +19,14 @@ let routes = [
     redirect: '/' + store.state.lang + '/ichiran'
   },
   {
+    path: '/404',
+    component: NotFound
+  },
+  {
+    path: PATH_PREFIX,
+    redirect: PATH_PREFIX + '/ichiran'
+  },
+  {
     path: PATH_PREFIX + '/ichiran',
     name: 'ichiran',
     component: Ichiran
@@ -41,10 +49,6 @@ let routes = [
   {
     path: '*',
     redirect: '/404'
-  },
-  {
-    path: '/404',
-    component: NotFound
   }
 ];
 
